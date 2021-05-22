@@ -8,7 +8,7 @@ $config = [
     "servername" => "localhost",
     "username" => "root",
     "password" => "root",
-    "dbname" => "guestbook"
+    "dbname" => "guest_book"
 ];
 
 $db = new Db($config);
@@ -18,9 +18,9 @@ $gb = $db->query("SELECT * FROM `gb`");
 
 $crud = new Crud($config);
 $crud->setTableName("gb");
-$table = $crud->get();
-//print_r($table);
-
-$crud->setTableName("opros");
-$table = $crud->get();
+$table = $crud->delete()->get();
 print_r($table);
+
+//$crud->setTableName("opros");
+//$table = $crud->get();
+//print_r($table);
