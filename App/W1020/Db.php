@@ -13,7 +13,7 @@ class Db
 
     public function query(string $sql): array
     {
-        $result = $this->mysqli->query($sql);
+        $result = $this->runSQL($sql);
 
         $res = [];
 
@@ -21,5 +21,14 @@ class Db
             $res[] = $row;
         }
         return $res;
+    }
+
+    /** Выполняет sql запрос
+     * @param string $sql
+     * @return object|bool
+     */
+    public function runSQL(string $sql): object|bool
+    {
+        return $this->mysqli->query($sql);
     }
 }
