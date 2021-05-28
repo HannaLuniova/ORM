@@ -37,7 +37,7 @@ class Db
      * @param string $sql
      * @return object|bool
      */
-    public function runSQL(string $sql): object|bool
+    public function runSQL(string $sql)
     {
         return $this->mysqli->query($sql);
     }
