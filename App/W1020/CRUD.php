@@ -19,7 +19,7 @@ class CRUD extends Db
      * @param string $tableName
      * @return $this
      */
-    public function setTableName(string $tableName): static
+    public function setTableName(string $tableName)
     {
         $this->tableName = $tableName;
         return $this;
@@ -29,7 +29,7 @@ class CRUD extends Db
      * @param string $idName
      * @return CRUD
      */
-    public function setIdName(string $idName): static
+    public function setIdName(string $idName)
     {
         $this->idName = $idName;
         return $this;
