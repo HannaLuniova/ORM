@@ -11,16 +11,26 @@ class Db
         $this->mysqli = new \mysqli($config["servername"], $config["username"], $config["password"], $config["dbname"]);
     }
 
+    /**
+     * @param string $sql
+     * @return array
+     * @throws \Exception
+     */
     public function query(string $sql): array
     {
         $result = $this->runSQL($sql);
 
-        $res = [];
+        if (is_object($result)) {
+            $res = [];
 
-        while ($row = $result->fetch_assoc()) {
-            $res[] = $row;
+            while ($row = $result->fetch_assoc()) {
+                $res[] = $row;
+            }
+            return $res;
+        } else {
+            throw new \Exception('Ошибка выполнения sql запроса');
         }
-        return $res;
+//        return $result;
     }
 
     /** Выполняет sql запрос

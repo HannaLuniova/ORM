@@ -9,6 +9,12 @@ class CRUD extends Db
     protected string $tableName;
     protected string $idName = "id";
 
+    public function __construct(array $config)
+    {
+        parent::__construct($config);
+        $this->setTableName($config["table"]);
+    }
+
     /**
      * @param string $tableName
      * @return $this
