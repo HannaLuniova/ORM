@@ -1,5 +1,11 @@
 {
+  "name": "w1020/orm",
+  "description": "ORM",
+  "minimum-stability": "stable",
+  "license": "MIT",
   "autoload": {
-    "psr-4": {"W1020\\": "App/W1020"}
+    "psr-4": {
+      "W1020\\": "W1020"
+    }
   }
 }
