@@ -8,11 +8,12 @@ $config = [
     "servername" => "localhost",
     "username" => "root",
     "password" => "root",
-    "dbname" => "guestbook"
+    "dbname" => "guestbook",
+    "table" => "ved"
 ];
 
 $crud = new CRUD($config);
-$crud->setTableName("ved");
+//$crud->setTableName("ved");
 $crud->setIdName("nomer");
 $table = $crud->get();
 print_r($table);
