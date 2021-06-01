@@ -1,2 +1,2 @@
-test.php
-.gitignore
+/.gitignore export-ignore
+/test.php export-ignore
