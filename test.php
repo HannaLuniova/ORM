@@ -27,12 +27,12 @@ $table = new W1020\Table($config);
 $table->setIdName("nomer");
 
 $table->rowCount();
-$table->setPageSize(10);
+$table->setPageSize(3);
 //echo $table->pageCount();
-//print_r($table->getPage(4));
+print_r($table->getPage(5));
 //print_r($table->columnsInfo());
 //print_r($table->columns());
-print_r($table->columnComments());
+//print_r($table->columnComments());
 
 
 

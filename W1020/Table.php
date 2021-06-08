@@ -44,9 +44,8 @@ class Table extends CRUD
     public function getPage(int $page = 1): array
     {
         return $this->query(
-            "SELECT * FROM $this->tableName `LIMIT " . (($page - 1) * $this->pageSize) . ",$this->pageSize;`"
+            "SELECT * FROM $this->tableName LIMIT " . (($page - 1) * $this->pageSize) . ",$this->pageSize;"
         );
-
     }
 
     /**
