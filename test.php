@@ -24,6 +24,8 @@ $config = [
 //$crud->upd(3, ["fio" => "Olia", "zp" => 150]);
 
 $table = new W1020\Table($config);
+$table->setIdName("nomer");
+
 $table->rowCount();
 $table->setPageSize(10);
 //echo $table->pageCount();

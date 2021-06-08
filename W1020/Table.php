@@ -56,7 +56,9 @@ class Table extends CRUD
         );
         $result = [];
         foreach ($table as $field) {
-            $result[$field['Field']] = $field['Type'];
+            if ($field['Field'] != $this->idName) {
+                $result[$field['Field']] = $field['Type'];
+            }
         }
         return $result;
     }
