@@ -49,6 +49,9 @@ class Table extends CRUD
 
     }
 
+    /**
+     * @return array
+     */
     public function columnsInfo(): array
     {
         $table = $this->query(
@@ -63,10 +66,29 @@ class Table extends CRUD
         return $result;
     }
 
+    /**
+     * @return array
+     */
     public function columns(): array
     {
         $info = $this->columnsInfo();
         return array_keys($info);
     }
 
+    /**
+     * @return array
+     */
+    public function columnComments(): array
+    {
+        $table = $this->query(
+            "SHOW FULL COLUMNS FROM `$this->tableName`;"
+        );
+        $result = [];
+        foreach ($table as $field) {
+            if ($field['Field'] != $this->idName) {
+                $result[$field['Field']] = $field['Comment'];
+            }
+        }
+        return $result;
+    }
 }
