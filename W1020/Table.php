@@ -48,4 +48,23 @@ class Table extends CRUD
         );
 
     }
+
+    public function columnsInfo(): array
+    {
+        $table = $this->query(
+            "SHOW COLUMNS FROM `$this->tableName`;"
+        );
+        $result = [];
+        foreach ($table as $field) {
+            $result[$field['Field']] = $field['Type'];
+        }
+        return $result;
+    }
+
+    public function columns(): array
+    {
+        $info = $this->columnsInfo();
+        return array_keys($info);
+    }
+
 }

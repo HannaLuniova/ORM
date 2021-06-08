@@ -26,5 +26,10 @@ $config = [
 $table = new W1020\Table($config);
 $table->rowCount();
 $table->setPageSize(10);
-echo $table->pageCount();
-print_r($table->getPage(4));
+//echo $table->pageCount();
+//print_r($table->getPage(4));
+//print_r($table->columnsInfo());
+print_r($table->columns());
+
+
+
