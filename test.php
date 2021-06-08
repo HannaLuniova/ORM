@@ -3,7 +3,6 @@ include 'vendor/autoload.php';
 
 use W1020\Db;
 use W1020\CRUD;
-use W1020\Table;
 
 $config = [
     "servername" => "localhost",
@@ -24,9 +23,13 @@ $config = [
 //
 //$crud->upd(3, ["fio" => "Olia", "zp" => 150]);
 
-$table = new Table($config);
-echo $table->rowCount();
+$table = new W1020\Table($config);
+$table->rowCount();
 $table->setPageSize(10);
-echo $table->pageCount();
-print_r($table->getPage(2));
+//echo $table->pageCount();
+//print_r($table->getPage(4));
+//print_r($table->columnsInfo());
+print_r($table->columns());
+
+
 
