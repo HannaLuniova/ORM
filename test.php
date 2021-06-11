@@ -29,7 +29,9 @@ $table->setIdName("nomer");
 $table->rowCount();
 $table->setPageSize(3);
 //echo $table->pageCount();
-print_r($table->getPage(5));
+//print_r($table->getPage(5));
+print_r($table->getRow(72));
+
 //print_r($table->columnsInfo());
 //print_r($table->columns());
 //print_r($table->columnComments());
