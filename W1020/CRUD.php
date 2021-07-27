@@ -74,9 +74,9 @@ class CRUD extends Db
 
     /** добавляет строку в таблицу
      * @param array $data
-     * @return bool
+     * @return int
      */
-    public function ins(array $data): bool
+    public function ins(array $data): int
     {
 //        $columns = array_keys($data);
 //        $stringColumns = "`" . implode('`, `', $columns) . "`";
@@ -84,9 +84,10 @@ class CRUD extends Db
 //        $sql = "INSERT INTO `$this->tableName` ($stringColumns) VALUES ($stringValues);";
 //        return $this->runSQL($sql);
 
-        return $this->runSQL("INSERT INTO `$this->tableName`" .
+        $this->runSQL("INSERT INTO `$this->tableName`" .
             " (`" . implode('`, `', array_keys($data)) . "`)" .
             " VALUES ('" . implode("', '", $data) . "');");
+        return $this->mysqli->insert_id;
     }
 
     /** Изменяет стоку в таблице
